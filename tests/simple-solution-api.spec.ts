@@ -20,7 +20,7 @@ test('Get order with incorrect id should receive code 400', async ({ request }) 
 
 test('Delete order with correct ID should receive code 204', async ({ request }) => {
   const requestHeader = {
-    api_key: '1234567890123453', // Ensure this matches the required API format
+    api_key: '1234567890123453',
   };
 
   const response = await request.delete('https://backend.tallinn-learning.ee/test-orders/2', {
@@ -34,7 +34,7 @@ test('Delete order with correct ID should receive code 204', async ({ request })
 
 test('Delete order with incorrect ID should receive code 400', async ({ request }) => {
   const requestHeader = {
-    api_key: '1234567890123453', // Ensure this matches the required API format
+    api_key: '1234567890123453',
   };
 
   const response = await request.delete('https://backend.tallinn-learning.ee/test-orders/0', {
@@ -114,7 +114,7 @@ test('put order with incorrect api key should receive code 401', async ({ reques
   }
 
   const requestHeaders = {
-    api_key: '112233',
+    api_key: '642',
   }
   // Send a PUT request to the server
   const response = await request.put('https://backend.tallinn-learning.ee/test-orders/1', {
