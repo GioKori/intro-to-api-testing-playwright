@@ -2,7 +2,6 @@ import { expect, test } from '@playwright/test'
 
 import { StatusCodes } from 'http-status-codes'
 
-
 test('Get order with correct id should receive code 200', async ({ request }) => {
   const response = await request.get('https://backend.tallinn-learning.ee/test-orders/2')
   console.log('response body:', await response.json())
