@@ -33,3 +33,22 @@ test('Test checks negative scenario for giving loan for user', async ({ request 
   const data = await response.json()
   console.log(data)
 })
+
+test('Test checks incorrect data provided case', async ({ request }) => {
+  const userData = new RiskAssesment(-1, -31, 1, false, 2300, 12)
+  const response = await request.post(
+    'https://backend.tallinn-learning.ee/api/loan-calc/decision',
+    { data: userData },
+  )
+  expect(response.status()).toBe(StatusCodes.BAD_REQUEST)
+  console.log('Validation error response:', await response.text())
+})
+
+test('Test checks when empty data is provided', async ({ request }) => {
+  const response = await request.post(
+    'https://backend.tallinn-learning.ee/api/loan-calc/decision',
+    { data: {} },
+  )
+  expect(response.status()).toBe(StatusCodes.BAD_REQUEST)
+  console.log('No data provided:', await response.text())
+})
