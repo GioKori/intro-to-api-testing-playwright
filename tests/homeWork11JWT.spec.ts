@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test'
 import { LoginDto } from './dto/Login-Dto'
 import { StatusCodes } from 'http-status-codes'
 
-
 const authURL = 'https://backend.tallinn-learning.ee/login/student'
 const jwtRegex = /^eyJhb[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+$/
 test('Test checks positive scenario when user credentials matching', async ({ request }) => {
