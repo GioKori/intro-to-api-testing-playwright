@@ -20,39 +20,39 @@ test('Get order with incorrect id should receive code 400', async ({ request }) 
 test('Delete order with correct ID should receive code 204', async ({ request }) => {
   const requestHeader = {
     api_key: '1234567890123453',
-  };
+  }
 
   const response = await request.delete('https://backend.tallinn-learning.ee/test-orders/2', {
     headers: requestHeader,
-  });
-  console.log('Received status:', response.status());
+  })
+  console.log('Received status:', response.status())
 
-  console.log('response headers:', response.text());
-  expect(response.status()).toBe(StatusCodes.NO_CONTENT);
-});
+  console.log('response headers:', response.text())
+  expect(response.status()).toBe(StatusCodes.NO_CONTENT)
+})
 
 test('Delete order with incorrect ID should receive code 400', async ({ request }) => {
   const requestHeader = {
     api_key: '1234567890123453',
-  };
+  }
 
   const response = await request.delete('https://backend.tallinn-learning.ee/test-orders/0', {
     headers: requestHeader,
-  });
+  })
 
-  console.log('Received status:', response.status());
-  console.log('response headers:', response.text());
-  expect(response.status()).toBe(StatusCodes.BAD_REQUEST);
-});
+  console.log('Received status:', response.status())
+  console.log('response headers:', response.text())
+  expect(response.status()).toBe(StatusCodes.BAD_REQUEST)
+})
 
 test('post order with correct data should receive code 200', async ({ request }) => {
   const requestBody = {
-    "status": "OPEN",
-    "courierId": 3,
-    "customerName": "GK",
-    "customerPhone": "5544",
-    "comment": "put",
-    "id": 0
+    status: 'OPEN',
+    courierId: 3,
+    customerName: 'GK',
+    customerPhone: '5544',
+    comment: 'put',
+    id: 0,
   }
   const response = await request.post('https://backend.tallinn-learning.ee/test-orders/', {
     data: requestBody,
@@ -65,12 +65,12 @@ test('post order with correct data should receive code 200', async ({ request })
 
 test('post order with incorrect data should receive code 400', async ({ request }) => {
   const requestBody = {
-    "status": "Close",
-    "courierId": 3,
-    "customerName": "GiKo",
-    "customerPhone": "5544",
-    "comment": "put",
-    "id": 0
+    status: 'Close',
+    courierId: 3,
+    customerName: 'GiKo',
+    customerPhone: '5544',
+    comment: 'put',
+    id: 0,
   }
   const response = await request.post('https://backend.tallinn-learning.ee/test-orders', {
     data: requestBody,
@@ -81,19 +81,19 @@ test('post order with incorrect data should receive code 400', async ({ request 
 })
 
 test('put order with correct api should receive code 200', async ({ request }) => {
- const requestBody = {
-   status: "OPEN",
-   courierId: 0,
-   customerName: "string",
-   customerPhone: "string",
-   comment: "string",
-   id: 0
- }
+  const requestBody = {
+    status: 'OPEN',
+    courierId: 0,
+    customerName: 'string',
+    customerPhone: 'string',
+    comment: 'string',
+    id: 0,
+  }
   const requestHeader = {
     api_key: '1234567898765432',
   }
   const response = await request.put('https://backend.tallinn-learning.ee/test-orders/3', {
-    headers : requestHeader,
+    headers: requestHeader,
     data: requestBody,
   })
   // Log the response status and body
