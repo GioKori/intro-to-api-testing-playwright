@@ -11,8 +11,11 @@
 
 ### homework 10
 
-| Test Case                                                       | HTTP Method | Status Code |
-|-----------------------------------------------------------------| ----------- | ----------- |
-| POST method - 1st case checks positive scenario for low risk    | POST        | 200         |
-| POST method - 2nd case checks positive scenario for medium risk | POST        | 200         |
-| POST method - 3rd case checks positive scenario for high risk   | POST        | 200         |
+| Test Case                                                           | HTTP Method | Status Code |
+|--------------------------------------------------------------------|-------------|--------------|
+| POST method - 1st case checks positive scenario for low risk       | POST        | 200          |
+| POST method - 2nd case checks positive scenario for medium risk    | POST        | 200          |
+| POST method - 3rd case checks positive scenario for high           | POST        | 200          |
+| Test checks negative scenario for giving loan for user            | POST        | 200          |
+| Test checks incorrect data provided case                          | POST        | 400          |
+| Test checks when empty data is provided                           | POST        | 400          |
