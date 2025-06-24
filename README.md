@@ -16,3 +16,10 @@
 | POST method - 1st case checks positive scenario for low risk    | POST        | 200         |
 | POST method - 2nd case checks positive scenario for medium risk | POST        | 200         |
 | POST method - 3rd case checks positive scenario for high risk   | POST        | 200         |
+
+
+### Homework 11
+ Test Case                                                                                    | HTTP Method | Status Code |
+|----------------------------------------------------------------------------------------------| ----------- |-------------|
+| POST method - First test checks positive scenario when user credentials are correct          | POST        | 200         |
+| POST method - Second test checks negative scenario when user provides incorrect dcredentials | POST        | 401         |
